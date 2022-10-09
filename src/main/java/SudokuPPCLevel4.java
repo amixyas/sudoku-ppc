@@ -148,8 +148,6 @@ public class SudokuPPCLevel4 {
             model.allDifferent(shapes[i]).post();
         }
 
-
-
         // Reading sudoku instance
         MatrixReader matrixReader = new MatrixReader();
         String[][] matrix = new String[n][n];
@@ -165,21 +163,18 @@ public class SudokuPPCLevel4 {
             }
         }
 
-
         matrix = new String[n][n];
         matrix = matrixReader.reader(matrix, this.colPath, n);
 
         for (int i = 0; i < n-1; i++) {
-            if (matrix[i][0].equals("_")) continue;
             for (int j = 0; j < n; j++) {
-                if (matrix[i][j].equals("A")) {
+                if (matrix[i][j].equals("V"))
                     rows[i][j].gt(rows[i+1][j]).post();
-                }
-                else rows[i][j].lt(rows[i+1][j]).post();
+
+                else if (matrix[i][j].equals("A"))
+                    rows[i][j].lt(rows[i+1][j]).post();
             }
         }
-
-
     }
 
     // Check all parameters values

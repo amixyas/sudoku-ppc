@@ -11,7 +11,7 @@ public class Main {
         System.out.println("2 : Make comparison for all n*n solutions between the Sudoku PPC model and the Sudoku BackTrack, in term of time.");
         System.out.println("3 : Solving Sudoku(9*9) with a provided pre-incomplete-instance.");
         System.out.println("4 : Solving Sudoku(16*16) with a provided pre-incomplete-instance.");
-        System.out.println("5 : Solving 'Greater Than' Sudoku(16*16) with a provided pre-incomplete-instance.");
+        System.out.println("5 : Solving 'Greater Than' Sudoku(16*16) with a provided constraints for both rows and cols.");
         System.out.println("Notes for 3 and 4 : - The provided pre-incomplete-instance, it's must be written in txt file please.");
         System.out.println("                    - To get a hint , take a look at resources folder.");
         System.out.println("                    - If you get an unwanted results, know that's due to the content of your file, please review it.");
@@ -73,9 +73,9 @@ public class Main {
             }
         }
         else if  (input==5) {
-            System.out.print("Please, provide to system the pre-incomplete-instance file that contain row constraints : ");
+            System.out.println("Please, provide to system the file that contains row constraints : ");
             String rowPath = sc.next();
-            System.out.print("Please, provide to system the pre-incomplete-instance file that contain col constraints : ");
+            System.out.println("Please, provide to system the file that contains col constraints : ");
             String colPath = sc.next();
             SudokuPPCLevel4 sudokuPPCLevel4 = new SudokuPPCLevel4(rowPath, colPath);
             sudokuPPCLevel4.solve();
